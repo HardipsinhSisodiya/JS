@@ -290,6 +290,7 @@ function validate(){
             document.getElementById("GenderError").classList.add("d-none");
         }
     }
+    /*......................................Hobbies blank value validation......................................*/
     var Hobbies=document.getElementsByName("Hobbies");
     var HobbiesData="";
     for(i=0;i<Hobbies.length;i++)
