@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    #Outercontainer {
+      border: 2px solid black;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 15px;
+     
+      
+      
+      min-width: 200px;
+      background-color: white;
+    }
+
+    body {
+      background-color: burlywood;
+    }
+
+    #dropdownMenu {
+      width: 100px;
+      border-radius: 3px;
+      background-color: beige;
+      margin-top: 10px;
+      margin-left: 3px;
+      height: 25px;
+    }
+
+    .heading {
+      padding: 5px;
+      text-align: center;
+    }
+
+    #submit:hover {
+      transition: 1s;
+      background-color: green;
+    }
+
+    table {
+      margin-top: 20px;
+      width:auto;
+    }
+  </style>
+  <title>Form</title>
+
+</head>
+
+<body>
+  <h2 class="heading">Registration form</h2>
+  <div class="container" id="Outercontainer">
+    <div class="container">
+      <form autocomplete="off" id="myform" onsubmit="onSubmitForm()">
+        <div class="mb-3">
+          <label for="exampleInputUsername" class="form-label">Username *</label>
+          <label class="text-danger d-none" id="UsernameError">This field is required.</label>
+          <label class="text-danger d-none" id="UsernameLengthError">Username must have length of 6 characters</label>
+          <input type="text" class="form-control" name="exampleInputusername" placeholder="Enter your username"
+            id="exampleInputusername" aria-describedby="Username">
+            
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail" class="form-label">Email address *</label>
+          <label class="text-danger d-none"id="EmailError">This field is required.</label>
+          <label class="text-danger d-none"id="EmailValidationError">Not a valid email.</label>
+          <input type="text" class="form-control" placeholder="Enter your email" id="exampleInputEmail"
+            aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword"  class="form-label">Password *</label>
+          <label class="text-danger d-none"id="PasswordError">This field is required.</label>
+          <label class="text-danger d-none"id="PasswordLengthError">Pasword must have length of 6 digit.</label>
+          <input type="password" class="form-control" autocomplete="on" placeholder="Enter your password" id="exampleInputPassword">
+        </div>
+        <!-- <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <div class="mb-3">
+          <label for="exampleInputAddress" class="form-label">Address *</label>
+          <label class="text-danger d-none" id="AddressError">This field is required.</label>
+          <label class="text-danger d-none" id="AddressLengthError">Address must have length of 10 characters.</label>
+          <textarea type="text" class="form-control" placeholder="Enter your address" id="exampleInputaddress"
+            aria-describedby="address"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputNumber" class="form-label">Number *</label>
+          <label class="text-danger d-none" id="NumberError">This field is required.</label>
+          <label class="text-danger d-none" id="NumberLengthError">Number must have 5 digits.</label>
+          <input type="Number" class="form-control" placeholder="Enter your number" id="exampleInputnumber"
+            aria-describedby="number"></input>
+        </div>
+        <label for="exampleInputGender" class="form-label">Gender *</label><label class="text-danger d-none"
+          id="GenderError">This field is required.</label>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Male" class="exampleInputGender"
+            id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Female" class="exampleInputGender"
+            id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" value="Others" name="flexRadioDefault" class="exampleInputGender"
+            id="flexRadioDefault3">
+          <label class="form-check-label" for="flexRadioDefault3">
+            Others
+          </label>
+        </div>
+        <div class="dropdown">
+            <label for="State" >State: *</label>
+            <select  id="dropdownMenu" name="State">
+              <option value="Gujarat" >Gujarat</option>
+              <option value="Punjab" >Punjab</option>
+              <option value="Maharashtra" >Maharashtra</option>
+            </select>
+        </div><br>
+        <label for="exampleInputHobbies" class="form-label">Hobbies *</label><label class="text-danger d-none"
+          id="HobbiesError">This field is required.</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Games" name="Hobbies" id="flexCheckDefault" >
+          <label class="form-check-label" for="flexCheckDefault">
+            Games
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Development" name="Hobbies" id="flexCheckChecked"
+            >
+          <label class="form-check-label" for="flexCheckChecked">
+            Development
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Farming" name="Hobbies" id="flexCheckDefault1" >
+          <label class="form-check-label" for="flexCheckDefault">
+            Farming
+          </label>
+        </div><br>
+        <div class="mb-3 form-action--buttons">
+          <input type="submit" class="btn btn-primary" value="submit" id="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container" id="Outercontainer">
+    <div class="container">
+      <!--Table to show data content -->
+      <div class="container">
+        <div class="container">
+          <table class="table" id="storelist">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Address</th>
+                <th>Number</th>
+                <th>Gender</th>
+                <th>Hobbies</th>
+                <th>State</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="./form.js"></script>
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
